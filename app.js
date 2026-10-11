@@ -92,7 +92,7 @@ form.addEventListener('submit', e => {
   body.className = 'message-body';
   const meta = document.createElement('div');
   meta.className = 'message-meta';
-  meta.textContent = 'YOU · LOCAL PREVIEW';
+  meta.textContent = 'BIGBOSS · LOCAL PREVIEW';
   const p = document.createElement('p');
   p.textContent = value;
   body.append(meta, p);
