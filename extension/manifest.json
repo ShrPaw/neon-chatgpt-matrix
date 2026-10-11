@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "NEON//CHAT — Matrix Bloom",
+  "version": "0.1.0",
+  "description": "A local-only neon Matrix theme for ChatGPT. No account or chat data is collected.",
+  "content_scripts": [
+    {
+      "matches": ["https://chatgpt.com/*", "https://chat.openai.com/*"],
+      "css": ["theme.css"],
+      "js": ["rain.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
