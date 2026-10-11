@@ -56,7 +56,7 @@ function applyControls() {
   document.getElementById('glow-value').value = `${glow.value}%`;
   document.documentElement.style.setProperty('--glow', Number(glow.value) / 100);
   document.body.classList.toggle('pixel-mode', pixel.checked);
-  localStorage.setItem('neon-chat-controls', JSON.stringify({ intensity: intensity.value, glow: glow.value, pixel: pixel.checked, motion: motion.checked }));
+  try { localStorage.setItem('neon-chat-controls', JSON.stringify({ intensity: intensity.value, glow: glow.value, pixel: pixel.checked, motion: motion.checked })); } catch {}
 }
 
 try {
@@ -74,6 +74,7 @@ window.addEventListener('resize', resize);
 
 document.getElementById('settings-toggle').addEventListener('click', () => document.body.classList.toggle('show-controls'));
 document.getElementById('menu').addEventListener('click', () => document.body.classList.toggle('show-menu'));
+document.getElementById('close-menu').addEventListener('click', () => document.body.classList.remove('show-menu'));
 document.getElementById('new-chat').addEventListener('click', () => { document.getElementById('messages').replaceChildren(); document.getElementById('prompt').focus(); document.body.classList.remove('show-menu'); });
 
 const form = document.getElementById('composer');
